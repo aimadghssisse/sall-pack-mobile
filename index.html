@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.0/css/font-awesome.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.4.1/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="style/main.css">
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <!-- container page -->
+    <div class="verifie-confirmation-pack">
+      <!-- start header -->
+      <div class="jumbotron">
+        <h2 class="display-5">Vérifier et confirmer</h2>
+      </div>
+      <!--  end header  -->
+      <!-- message notification -->
+      <div class="container-fluid">
+        <div class="content">
+          <div class="row">
+            <div class="alert alert-danger pl-0" role="alert">
+              <i class="fa fa-exclamation-circle mr-2" aria-hidden="true"></i>
+              Cette étape est importante afin d`assurer la bonne mise à jour de vos présentations utilisant ce document
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end  message notification -->
+
+      <!-- start block drag and drop -->
+      <div class="container-fluid">
+        <div class="content">
+          <div class="row">
+            <!-- start pager of information utilisation -->
+            <div class="col-md-3 elements part-one">
+              <h1>Drag & drop pour assure la correspondance</h1>
+              <ul class="list-rules global-c">
+                <li> <span class="grey-c bold-g">Sélectionner </span>la page souhailtée de l`ancien document. </li>
+                <li> <span class="grey-c bold-g">Glisser-la</span> vers la ou les pages correspondantes du nouvau document.</li>
+                <li>Vous pouvez avoir un <span class="grey-c">apercu</span> de la page en cliquant sur l`icon <i class="fa fa-search" aria-hidden="true"></i>.</li>
+                <li> <span class="red-c bold-g">Enregistrer</span> pour valider la correspondance. Cette action est irréversible.</li>
+              </ul>
+            </div>
+            <!-- end pager of information utilisation -->
+
+            <!-- start block drag and drop data  -->
+            <div class="col-md-8 offset-md-1 elements part-tow d-flex justify-content-between">
+              <!-- first block  old document-->
+              <div class="section section-one">
+                <!-- header block -->
+                <div class="d-flex justify-content-between header-nav">
+                  <p class="grey-c text-uppercase pr-3 pl-3">Ancien document</p>
+                  <p class="grey-c pr-5 pl-5">13 pages</p>
+                </div>
+                <!-- end header block -->
+                <div class="section-drag section-drag-one">
+                  <div class="swiper-container">
+                      <div class="swiper-wrapper">
+                          <div class="swiper-slide">
+                            <span class="elemnt-zoom">
+                              <span class="zoom"><i class="fa fa-search" aria-hidden="true"></i></span>
+                            </span>
+                            <img src="https://picsum.photos/id/237/200/300" draggable="true" ondragstart="drag(event)" id="drag1" alt="" data-number="1" data-id="a1" class="image-fancybox">
+                            <span class="element-order grey-c">1</span>
+                            <a href="https://picsum.photos/id/237/200/300" data-fancybox="images" class="document-new">
+                            </a>
+                          </div>
+                          <div class="swiper-slide">
+                            <span class="elemnt-zoom">
+                              <span class="zoom"><i class="fa fa-search" aria-hidden="true"></i></span>
+                            </span>
+                            <img src="https://picsum.photos/id/238/200/300" draggable="true" ondragstart="drag(event)" id="drag2" alt="" data-number="2" data-id="a2" class="image-fancybox">
+                            <span class="element-order grey-c">2</span>
+                            <a href="https://picsum.photos/id/238/200/300" data-fancybox="images" class="document-new">
+                            </a>
+                          </div>
+                          <div class="swiper-slide">
+                            <span class="elemnt-zoom">
+                              <span class="zoom"><i class="fa fa-search" aria-hidden="true"></i></span>
+                            </span>
+                            <img src="https://picsum.photos/id/239/200/300" draggable="true" ondragstart="drag(event)" id="drag3" alt="" data-number="3" data-id="a3" class="image-fancybox">
+                            <span class="element-order grey-c">3</span>
+                            <a href="https://picsum.photos/id/239/200/300" data-fancybox="images" class="document-new">
+                            </a>
+                          </div>
+                          <div class="swiper-slide">
+                            <span class="elemnt-zoom">
+                              <span class="zoom"><i class="fa fa-search" aria-hidden="true"></i></span>
+                            </span>
+                            <img src="https://picsum.photos/id/222/200/300" draggable="true" ondragstart="drag(event)" id="drag4" alt="" data-number="4" data-id="a4" class="image-fancybox">
+                            <span class="element-order grey-c">4</span>
+                            <a href="https://picsum.photos/id/222/200/300" data-fancybox="images" class="document-new">
+                            </a>
+                          </div>
+                          <div class="swiper-slide">
+                            <span class="elemnt-zoom">
+                              <span class="zoom"><i class="fa fa-search" aria-hidden="true"></i></span>
+                            </span>
+                            <img src="https://picsum.photos/id/102/200/300" draggable="true" ondragstart="drag(event)" id="drag5" alt="" data-number="5" data-id="a5" class="image-fancybox">
+                            <span class="element-order grey-c">5</span>
+                            <a href="https://picsum.photos/id/222/200/300" data-fancybox="images" class="document-new">
+                            </a>
+                          </div>
+                          <div class="swiper-slide">
+                            <span class="elemnt-zoom">
+                              <span class="zoom"><i class="fa fa-search" aria-hidden="true"></i></span>
+                            </span>
+                            <img src="https://picsum.photos/id/22/200/300" draggable="true" ondragstart="drag(event)" id="drag6" alt="" data-number="6" data-id="a6" class="image-fancybox">
+                            <span class="element-order grey-c">6</span>
+                            <a href="https://picsum.photos/id/222/200/300" data-fancybox="images" class="document-new">
+                            </a>
+                          </div>
+                      </div>
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-button-next"></div>
+                  </div>
+                </div>
+              </div>
+              <!-- end first block  old document-->
+
+              <!-- end second block  new document-->
+              <div class="section section-tow">
+                <!-- header block -->
+                <div class="d-flex justify-content-between header-nav">
+                  <p class="grey-c text-uppercase pr-3 pl-3">Nouveaut document</p>
+                  <p class="grey-c pr-3 pl-3">14 pages</p>
+                </div>
+                <!-- end header block -->
+                <div class="section-drag section-drag-tow">
+                  <div class="swiper-container">
+                      <div class="swiper-wrapper">
+                          <div class="swiper-slide">
+                            <span class="element-order grey-c">11</span>
+                            <img src="https://picsum.photos/id/240/200/300" alt="" ondrop="drop(event)" ondragover="allowDrop(event)" id="drop-1" data-new="11" data-id="b1" class="image-fancybox">
+                            <span class="element-order element-drag grey-r">
+                              <div class="drag-old">
+                                <span class="zoom"><i class="fa fa-search" aria-hidden="true"></i></span>
+                              </div>
+                            </span>
+                            <a href="https://picsum.photos/id/240/200/300" data-fancybox="images" class="document-new">
+                            </a>
+                          </div>
+                          <div class="swiper-slide">
+                            <span class="element-order grey-c">22</span>
+                            <img src="https://picsum.photos/id/241/200/300" alt="" ondrop="drop(event)" ondragover="allowDrop(event)" id="drop-2" data-new="22" data-id="b2" class="image-fancybox">
+                            <span class="element-order element-drag grey-r">
+                              <div class="drag-old">
+                                <span class="zoom"><i class="fa fa-search" aria-hidden="true"></i></span>
+                              </div>
+                            </span>
+                            <a href="https://picsum.photos/id/241/200/300" data-fancybox="images" class="document-new">
+                            </a>
+                          </div>
+                          <div class="swiper-slide">
+                            <span class="element-order grey-c">33</span>
+                            <img src="https://picsum.photos/id/242/200/300" alt="" ondrop="drop(event)" ondragover="allowDrop(event)" id="drop-3" data-new="33" data-id="b3" class="image-fancybox">
+                            <span class="element-order element-drag grey-r">
+                              <div class="drag-old">
+                                <span class="zoom"><i class="fa fa-search " aria-hidden="true"></i></span>
+                              </div>
+                            </span>
+                            <a href="https://picsum.photos/id/242/200/300" data-fancybox="images" class="document-new">
+                            </a>
+                          </div>
+                      </div>
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-button-next"></div>
+                  </div>
+                </div>
+              </div>
+                <!-- end second block  new document-->
+            </div>
+            <!-- end block drag and drop data  -->
+          </div>
+        </div>
+      </div>
+      <!-- end block drag and drop -->
+
+      <!-- start block actions -->
+      <div class="container-fluid">
+        <div class="content">
+          <div class="row">
+            <div class="d-flex justify-content-end button-actions">
+              <button type="button" class="btn btn-link cancel red-c">Annule</button>
+              <button type="button" class="btn btn-primary save" disabled>Enregister</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end block actions -->
+    </div>
+    <!-- end container page -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/swiper/js/swiper.js"></script>
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.4.1/jquery.fancybox.min.js"></script>
+    <script src="js/script.js" charset="utf-8"></script>
+  </body>
+</html>
