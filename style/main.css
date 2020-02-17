@@ -16,7 +16,7 @@ body {
 }
 
 .bold-g {
-  font-weight: 700;
+  font-weight: bold;
 }
 
 a:hover {
@@ -46,6 +46,7 @@ a:hover {
 .verifie-confirmation-pack .jumbotron {
   background-color: #414042;
   padding: 3rem 2rem;
+  border-radius: 0;
 }
 .verifie-confirmation-pack .jumbotron h2 {
   color: #ffffff;
@@ -60,23 +61,54 @@ a:hover {
 .verifie-confirmation-pack .alert-danger i {
   font-size: 24px;
 }
+.verifie-confirmation-pack .alert-danger i.fa-exclamation-circle {
+  transform: rotate(180deg);
+}
 .verifie-confirmation-pack .content {
-  width: 85%;
+  width: 90%;
   margin: auto;
 }
 .verifie-confirmation-pack .content .elements {
   border: solid 2px #d7d7d7;
   background-color: #fff;
   border-radius: 4px;
+  margin-bottom: 50px;
+}
+.verifie-confirmation-pack .content .elements .header-nav {
+  padding-top: 20px;
+}
+.verifie-confirmation-pack .content .elements .header-nav p {
+  font-size: 12px;
+}
+.verifie-confirmation-pack .content .elements .header-nav p.number-page {
+  width: 50%;
+  padding-right: 0px !important;
+  padding-left: 0 !important;
+}
+.verifie-confirmation-pack .content .part-one {
+  padding-right: 20px;
+  padding-top: 40px;
+  padding-left: 20px;
+}
+.verifie-confirmation-pack .content .part-one h1 {
+  font-size: 28px;
+  width: 80%;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+.verifie-confirmation-pack .content .part-one .list-rules li {
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 .verifie-confirmation-pack .content .part-tow {
-  padding-top: 40px;
+  padding-top: 20px;
   padding-bottom: 40px;
 }
 .verifie-confirmation-pack .content .part-tow .swiper-slide {
   display: flex;
   justify-content: center;
   align-items: center;
+  display: none;
 }
 .verifie-confirmation-pack .content .part-tow .swiper-slide .side-one, .verifie-confirmation-pack .content .part-tow .swiper-slide .side-tow {
   width: 10%;
@@ -90,12 +122,50 @@ a:hover {
   width: 100%;
   height: auto;
 }
+.verifie-confirmation-pack .content .part-tow .swiper-slide.swiper-slide-prev, .verifie-confirmation-pack .content .part-tow .swiper-slide.swiper-slide-next {
+  display: flex;
+}
 .verifie-confirmation-pack .content .part-tow .swiper-slide.swiper-slide-prev .space-pic, .verifie-confirmation-pack .content .part-tow .swiper-slide.swiper-slide-next .space-pic {
   height: 180px;
   width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.verifie-confirmation-pack .content .part-tow .swiper-slide.swiper-slide-active {
+  display: flex;
+}
+.verifie-confirmation-pack .content .part-tow .swiper-slide.swiper-slide-active .space-pic img {
+  border-style: solid;
+  border-color: #ee889a;
+  border-width: 2px;
+  padding: 5px;
+}
+.verifie-confirmation-pack .content .part-tow .swiper-slide .drag-old .old-document-drag {
+  width: 22px;
+  height: 22px;
+  background: #e40337;
+  border-radius: 50%;
+  padding: 3px 5px;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 6px;
+  display: inline-block;
+  font-size: 12px;
+}
+.verifie-confirmation-pack .content .part-tow .swiper-slide .drag-old .trash-drag {
+  width: 22px;
+  height: 22px;
+  background: #e4033791;
+  border-radius: 50%;
+  padding: 5px 5px;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 6px;
+  font-size: 12px;
+}
+.verifie-confirmation-pack .content .part-tow .swiper-slide .drag-old .trash-drag:hover {
+  background: #e40337;
 }
 .verifie-confirmation-pack .button-actions {
   padding-top: 20px;
@@ -128,6 +198,10 @@ a:hover {
   z-index: 4;
 }
 
+.swiper-container-2 .swiper-slide.swiper-slide-active .space-pic img {
+  border-style: dotted !important;
+}
+
 .swiper-wrapper {
   z-index: 2;
 }
@@ -149,17 +223,23 @@ a:hover {
   top: 99%;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .swiper-container, .swiper-container-2 {
     height: 450px;
   }
 
   .verifie-confirmation-pack .element-drag {
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 10px;
+    padding-right: 10px;
   }
   .verifie-confirmation-pack .content {
-    width: 95%;
+    width: 98%;
+  }
+  .verifie-confirmation-pack .content .part-one h1 {
+    font-size: 24px;
+  }
+  .verifie-confirmation-pack .content .part-one .list-rules li {
+    font-size: 14px;
   }
   .verifie-confirmation-pack .content .part-tow .swiper-slide .space-pic {
     display: flex;
@@ -173,9 +253,35 @@ a:hover {
   .verifie-confirmation-pack .content .part-tow .swiper-slide.swiper-slide-prev .space-pic, .verifie-confirmation-pack .content .part-tow .swiper-slide.swiper-slide-next .space-pic {
     height: 180px;
     width: 50%;
+  }
+  .verifie-confirmation-pack .button-actions {
+    justify-content: center !important;
+  }
+}
+@media screen and (max-width: 600px) {
+  .swiper-container, .swiper-container-2 {
+    height: 450px;
+  }
+
+  .verifie-confirmation-pack .element-drag {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .verifie-confirmation-pack .content {
+    width: 98%;
+  }
+  .verifie-confirmation-pack .content .part-tow .swiper-slide .space-pic {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+  }
+  .verifie-confirmation-pack .content .part-tow .swiper-slide .space-pic img {
+    width: 90%;
+    height: auto;
+  }
+  .verifie-confirmation-pack .content .part-tow .swiper-slide.swiper-slide-prev .space-pic, .verifie-confirmation-pack .content .part-tow .swiper-slide.swiper-slide-next .space-pic {
+    height: 180px;
+    width: 50%;
   }
 }
 

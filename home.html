@@ -37,120 +37,136 @@
       <!-- start block drag and drop -->
       <div class="container-fluid">
         <div class="content">
+
           <div class="row">
             <!-- start pager of information utilisation -->
-            <div class="col-md-3 col-sm-12 elements part-one">
+            <div class="col-lg-3 col-md-4 col-sm-12 elements part-one">
               <h1>Drag & drop pour assure la correspondance</h1>
               <ul class="list-rules global-c">
-                <li> <span class="grey-c bold-g">Sélectionner </span>la page souhailtée de l`ancien document. </li>
-                <li> <span class="grey-c bold-g">Glisser-la</span> vers la ou les pages correspondantes du nouvau document.</li>
-                <li>Vous pouvez avoir un <span class="grey-c">apercu</span> de la page en cliquant sur l`icon <i class="fa fa-search" aria-hidden="true"></i>.</li>
+                <li> <span class="grey-c bold-g">Sélectionner </span>la page souhaitée de l`ancien document. </li>
+                <li> <span class="grey-c bold-g">Glisser-la</span> vers la ou les pages correspondantes du nouveau document.</li>
+                <li>Vous pouvez avoir un <span class="grey-c bold-g">apercu</span> de la page en cliquant sur l`icon <i class="fa fa-search" aria-hidden="true"></i>.</li>
                 <li> <span class="red-c bold-g">Enregistrer</span> pour valider la correspondance. Cette action est irréversible.</li>
               </ul>
             </div>
             <!-- end pager of information utilisation -->
 
-            <div class="col-md-8 col-sm-12 offset-md-1 elements part-tow d-flex justify-content-between">
-              <div class="col-6 element-drag">
-                <div class="swiper-container">
-                  <div class="swiper-wrapper">
-
-                    <div class="swiper-slide">
-                      <div class="side-one">
-                        <i class="fa fa-search zoom" aria-hidden="true"></i>
-                      </div>
-                      <div class="space-pic">
-                        <img src="https://picsum.photos/id/236/300/180" alt="" data-number="1" data-id="a1" class="image-fancybox drag-document Responsive image">
-                      </div>
-                      <div class="side-tow">
-                        <span class="element-order grey-c">1</span>
-                      </div>
-                      <a href="https://picsum.photos/id/237/300/180" data-fancybox="images" class="document-new">
-                      </a>
-                    </div>
-
-                    <div class="swiper-slide">
-                      <div class="side-one">
-                        <i class="fa fa-search zoom" aria-hidden="true"></i>
-                      </div>
-                      <div class="space-pic">
-                        <img src="https://picsum.photos/id/237/300/180" alt="" data-number="2" data-id="a2" class="image-fancybox drag-document Responsive image">
-                      </div>
-                      <div class="side-tow">
-                        <span class="element-order grey-c">2</span>
-                      </div>
-                      <a href="https://picsum.photos/id/237/300/180" data-fancybox="images" class="document-new">
-                      </a>
-                    </div>
-
-                    <div class="swiper-slide">
-                      <div class="side-one">
-                        <i class="fa fa-search zoom" aria-hidden="true"></i>
-                      </div>
-                      <div class="space-pic">
-                        <img src="https://picsum.photos/id/238/300/180" alt="" data-number="3" data-id="a3" class="image-fancybox drag-document Responsive image">
-                      </div>
-                      <div class="side-tow">
-                        <span class="element-order grey-c">3</span>
-                      </div>
-                      <a href="https://picsum.photos/id/237/300/180" data-fancybox="images" class="document-new">
-                      </a>
-                    </div>
-                  </div>
-
-                  <div class="swiper-button-prev"></div>
-                  <div class="swiper-button-next"></div>
+            <div class="col-lg-8 col-md-7 col-sm-12 offset-md-1 elements">
+              <div class="row">
+                <div class="col-6 d-flex justify-content-between header-nav">
+                  <p class="grey-c text-uppercase pr-3 pl-3">Ancien document</p>
+                  <p class=" number-page grey-c pr-5 pl-5">13 pages</p>
+                </div>
+                <div class="col-6 d-flex justify-content-between header-nav">
+                  <p class="grey-c text-uppercase pr-3 pl-3">Nouveau document</p>
+                  <p class=" number-page grey-c pr-3 pl-3">14 pages</p>
                 </div>
               </div>
-              <div class="col-6 element-drag">
-                <div class="swiper-container-2">
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide dropzone">
-                      <div class="side-tow">
-                        <span class="element-order grey-c">11</span>
+              <div class="row part-tow d-flex justify-content-between">
+                <div class="col-6 element-drag section-drag-one">
+                  <div class="swiper-container">
+                    <div class="swiper-wrapper">
+
+                      <div class="swiper-slide">
+                        <div class="side-one">
+                          <i class="fa fa-search zoom" aria-hidden="true"></i>
+                        </div>
+                        <div class="space-pic">
+                          <img src="https://picsum.photos/id/236/300/180" alt="" data-number="1" data-id="a1" class="image-fancybox drag-document Responsive image">
+                        </div>
+                        <div class="side-tow">
+                          <span class="element-order grey-c bold-g ">1</span>
+                        </div>
+                        <a href="https://picsum.photos/id/237/300/180" data-fancybox="images" class="document-new">
+                        </a>
                       </div>
-                      <div class="space-pic">
-                        <img src="https://picsum.photos/id/240/300/180" alt="" data-new="11" data-id="b1" class="image-fancybox dropzone">
+
+                      <div class="swiper-slide">
+                        <div class="side-one">
+                          <i class="fa fa-search zoom" aria-hidden="true"></i>
+                        </div>
+                        <div class="space-pic">
+                          <img src="https://picsum.photos/id/237/300/180" alt="" data-number="2" data-id="a2" class="image-fancybox drag-document Responsive image">
+                        </div>
+                        <div class="side-tow">
+                          <span class="element-order grey-c bold-g ">2</span>
+                        </div>
+                        <a href="https://picsum.photos/id/237/300/180" data-fancybox="images" class="document-new">
+                        </a>
                       </div>
-                      <div class="side-one">
-                        <i class="fa fa-search zoom" aria-hidden="true"></i>
+
+                      <div class="swiper-slide">
+                        <div class="side-one">
+                          <i class="fa fa-search zoom" aria-hidden="true"></i>
+                        </div>
+                        <div class="space-pic">
+                          <img src="https://picsum.photos/id/238/300/180" alt="" data-number="3" data-id="a3" class="image-fancybox drag-document Responsive image">
+                        </div>
+                        <div class="side-tow">
+                          <span class="element-order grey-c bold-g ">3</span>
+                        </div>
+                        <a href="https://picsum.photos/id/237/300/180" data-fancybox="images" class="document-new">
+                        </a>
                       </div>
-                      <a href="https://picsum.photos/id/240/300/180" data-fancybox="images" class="document-new">
-                      </a>
                     </div>
 
-                    <div class="swiper-slide dropzone">
-                      <div class="side-tow">
-                        <span class="element-order grey-c">12</span>
-                      </div>
-                      <div class="space-pic">
-                        <img src="https://picsum.photos/id/242/300/180" alt="" data-new="12" data-id="b2" class="image-fancybox dropzone">
-                      </div>
-                      <div class="side-one">
-                        <i class="fa fa-search zoom" aria-hidden="true"></i>
-                      </div>
-                      <a href="https://picsum.photos/id/242/300/180" data-fancybox="images" class="document-new">
-                      </a>
-                    </div>
-
-                    <div class="swiper-slide dropzone">
-                      <div class="side-tow">
-                        <span class="element-order grey-c">13</span>
-                      </div>
-                      <div class="space-pic">
-                        <img src="https://picsum.photos/id/244/300/180" alt="" data-new="13" data-id="b3" class="image-fancybox dropzone">
-                      </div>
-                      <div class="side-one">
-                        <i class="fa fa-search zoom" aria-hidden="true"></i>
-                      </div>
-                      <a href="https://picsum.photos/id/244/300/180" data-fancybox="images" class="document-new">
-                      </a>
-                    </div>
-
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
                   </div>
+                </div>
+                <div class="col-6 element-drag">
+                  <div class="swiper-container-2">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide dropzone">
+                        <div class="side-tow">
+                          <span class="element-order grey-c bold-g ">11</span>
+                        </div>
+                        <div class="space-pic">
+                          <img src="https://picsum.photos/id/240/300/180" alt="" data-new="11" data-id="b1" class="image-fancybox dropzone">
+                        </div>
+                        <div class="side-one">
+                          <i class="fa fa-search zoom" aria-hidden="true"></i>
+                          <div class="drag-old"></div>
+                        </div>
+                        <a href="https://picsum.photos/id/240/300/180" data-fancybox="images" class="document-new">
+                        </a>
+                      </div>
 
-                  <div class="swiper-button-prev"></div>
-                  <div class="swiper-button-next"></div>
+                      <div class="swiper-slide dropzone">
+                        <div class="side-tow">
+                          <span class="element-order grey-c bold-g ">12</span>
+                        </div>
+                        <div class="space-pic">
+                          <img src="https://picsum.photos/id/242/300/180" alt="" data-new="12" data-id="b2" class="image-fancybox dropzone">
+                        </div>
+                        <div class="side-one">
+                          <i class="fa fa-search zoom" aria-hidden="true"></i>
+                          <div class="drag-old"></div>
+                        </div>
+                        <a href="https://picsum.photos/id/242/300/180" data-fancybox="images" class="document-new">
+                        </a>
+                      </div>
+
+                      <div class="swiper-slide dropzone">
+                        <div class="side-tow">
+                          <span class="element-order grey-c bold-g ">13</span>
+                        </div>
+                        <div class="space-pic">
+                          <img src="https://picsum.photos/id/244/300/180" alt="" data-new="13" data-id="b3" class="image-fancybox dropzone">
+                        </div>
+                        <div class="side-one">
+                          <i class="fa fa-search zoom" aria-hidden="true"></i>
+                          <div class="drag-old"></div>
+                        </div>
+                        <a href="https://picsum.photos/id/244/300/180" data-fancybox="images" class="document-new">
+                        </a>
+                      </div>
+
+                    </div>
+
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -164,7 +180,7 @@
         <div class="content">
           <div class="row">
             <div class="d-flex justify-content-end button-actions">
-              <button type="button" class="btn btn-link cancel red-c">Annule</button>
+              <button type="button" class="btn btn-link cancel red-c">Annuler</button>
               <button type="button" class="btn btn-primary save" disabled>Enregister</button>
             </div>
           </div>

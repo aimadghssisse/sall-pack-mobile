@@ -40,7 +40,6 @@ var drag = null
 interact('.drag-document').draggable({
   listeners: {
     start (event) {
-      console.log('start')
     },
     move (event) {
       position.x += event.dx
@@ -52,7 +51,6 @@ interact('.drag-document').draggable({
 
     },
     end (event) {
-        console.log(event);
         position.x = 0
         position.y = 0
         drag.addClass('animate').css({'transform': 'translate(0px, 0px)'})
@@ -70,6 +68,172 @@ interact('.drag-document').draggable({
 interact('.dropzone').dropzone({
   accept: '.drag-document',
   ondrop: function (event) {
-    console.log(event.target);
+    var dragOver = $(event.target)
+    if(dragOver.length > 0 && (dragOver.data('new') != '' && typeof dragOver.data('new') != 'undefiend') )
+    var old = drag.data('number')
+    var newElem = dragOver.data('new')
+    var old_id = drag.data('id')
+    var newElem_id = dragOver.data('id')
+    var append = false
+    var exist = false
+
+    if(objectDragDrop.length > 0) {
+      objectDragDrop.map((item, key) => {
+        if(item.new == newElem) {
+          if(typeof objectDragDrop[key]['old'] == 'undefiend') {
+            objectDragDrop[key]['old'] = []
+            objectDragDropID[key]['old'] = []
+          }
+          if(objectDragDrop[key]['old'].includes(old)) {
+            append = true
+          } else {
+            objectDragDrop[key]['old'].push(old)
+            objectDragDropID[key]['old'].push(old_id)
+          }
+          exist = true
+        }
+      })
+      if(!exist) {
+        objectDragDrop.push({new: newElem})
+        objectDragDrop[objectDragDrop.length - 1]['old'] = []
+        objectDragDrop[objectDragDrop.length - 1]['old'].push(old)
+
+        objectDragDropID.push({new: newElem_id})
+        objectDragDropID[objectDragDropID.length - 1]['old'] = []
+        objectDragDropID[objectDragDropID.length - 1]['old'].push(old_id)
+      }
+    } else {
+      objectDragDrop.push({new: newElem})
+      objectDragDrop[0]['old'] = []
+      objectDragDrop[0]['old'].push(old)
+
+      objectDragDropID.push({new: newElem_id})
+      objectDragDropID[0]['old'] = []
+      objectDragDropID[0]['old'].push(old_id)
+    }
+
+    if(!append) {
+      dragOver.parents('.swiper-slide ').find('.side-one .drag-old').append("<span class='space-element'><span class='old-document-drag'>"+old+"</span></span>")
+    }
+    activetedSaveData()
   }
 });
+
+
+var objectDragDrop = [] // collection data document
+var objectDragDropID = [] // collection data document
+
+
+function activetedSaveData() {
+  existObject = []
+  $('.section-drag-one .swiper-slide').each(function () {
+    var number = $(this).find('img').attr('data-number')
+    if(typeof number != 'undefiend' && number != '') {
+      existObject.push(number)
+    }
+  })
+  objectDragDrop.map(item => {
+    item.old.map(nbr => {
+      index = existObject.indexOf(String(nbr))
+      if(index != -1) {
+        existObject.splice(index, 1)
+      }
+    })
+  })
+  console.log(existObject.length);
+  if(existObject.length > 0) {
+    $('button.save').attr('disabled', true)
+  } else {
+    $('button.save').attr('disabled', false)
+  }
+}
+
+
+$('body').on('mouseenter', '.swiper-slide-active .space-element .old-document-drag', function () {
+  if($(this).parent('.space-element').find('i').length == 0) {
+    var old = $(this).text()
+    $('.space-element').find('.trash-drag').each(function () {
+      $(this).fadeOut('slow').remove()
+    })
+    $(this).parent('.space-element').append('<i class="trash-drag fa fa-trash-o" data-value="'+old+'"></i>').find('.trash-drag').fadeIn('slow').css("display","inline-block");
+  }
+})
+
+// mouse leave trash to hide it
+$('body').on('mouseleave', '.swiper-slide-active .space-element .old-document-drag, .swiper-slide-active .space-element .trash-drag', function () {
+  if($(this).hasClass('trash-drag')) {
+    $(this).fadeOut('slow').remove()
+  }
+  // else if($(this).parents('.space-element').find('.trash-drag').length > 0 && $(this).hasClass('trash-drag')) {
+  //   $(this).parents('.space-element').find('.trash-drag').fadeOut('slow').remove()
+  // }
+})
+
+
+// delete document drag
+$('body').on('click', '.swiper-slide-active .trash-drag', function () {
+  var old = $(this).attr('data-value')
+  var newDoc = ''
+  if(typeof old != 'undefiend' && old != '') {
+    $('.swiper-slide').each(function () {
+      if($(this).hasClass('swiper-slide-active')) {
+        newDoc = $(this).find('img').data('new')
+        if(typeof newDoc != "undefiend" && newDoc != '') {
+          objectDragDrop.map((item, key) => {
+            if(item.new == newDoc) {
+              for( i = 0; i < item.old.length; i++){
+                if ( item.old[i] == old) {
+                  $(this).find('.drag-old span').each(function () {
+                    if(old == $(this).text()) {
+                      var parent = $(this).parent('.drag-old')
+                      parent.find('.trash-drag').fadeOut('slow').remove()
+                      $(this).fadeOut('slow').remove()
+                      var count = 0+ 'px'
+                      if(parent.find('.old-document-drag').length != 0) {
+                        var count = (parent.find('.old-document-drag').length * 15 + 24 ) + 'px'
+                      }
+                      parent.css('top', 'calc(50% - '+count+')')
+                    }
+                  })
+                  objectDragDrop[key].old.splice(i, 1);
+                  objectDragDropID[key].old.splice(i, 1);
+                  activetedSaveData()
+                }
+              }
+            }
+          })
+        }
+      }
+    })
+  }
+  old = ''
+})
+
+// save data collection
+$('.save').click(function () {
+  console.table(objectDragDrop);
+  console.table(objectDragDropID);
+})
+
+// reset data collection
+$('.cancel').click(function () {
+  objectDragDrop = []
+  objectDragDropID = []
+  $('.drag-old').each(function () {
+    $(this).find('span:not(.zoom)').each(function () {
+      if(!$(this).hasClass('trash-drag')) {
+        $(this).fadeOut('slow').remove()
+      }
+    })
+  })
+  activetedSaveData()
+  console.table(objectDragDropID);
+  console.table(objectDragDrop);
+})
+// fancybox applique on image and zoom icon
+$('.zoom').on('click', function() {
+  $.fancybox.open($(this).parents('.swiper-slide').find('.document-new'), {
+    touch: false
+  });
+});
+// end fancybox
