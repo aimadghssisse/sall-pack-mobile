@@ -74,6 +74,9 @@ a:hover {
   border-radius: 4px;
   margin-bottom: 50px;
 }
+.verifie-confirmation-pack .content .elements .header-nav:first-child {
+  border-right: 2px #dfdfdf dotted;
+}
 .verifie-confirmation-pack .content .elements .header-nav {
   padding-top: 20px;
 }
@@ -104,10 +107,18 @@ a:hover {
   padding-top: 20px;
   padding-bottom: 40px;
 }
+.verifie-confirmation-pack .content .part-tow .section-drag-one {
+  border-right: 2px #dfdfdf dotted;
+}
 .verifie-confirmation-pack .content .part-tow .swiper-slide {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.verifie-confirmation-pack .content .part-tow .swiper-slide .side-one, .verifie-confirmation-pack .content .part-tow .swiper-slide .side-tow {
+  display: none;
+}
+.verifie-confirmation-pack .content .part-tow .swiper-slide .space-pic img {
   display: none;
 }
 .verifie-confirmation-pack .content .part-tow .swiper-slide .side-one, .verifie-confirmation-pack .content .part-tow .swiper-slide .side-tow {
@@ -122,8 +133,8 @@ a:hover {
   width: 100%;
   height: auto;
 }
-.verifie-confirmation-pack .content .part-tow .swiper-slide.swiper-slide-prev, .verifie-confirmation-pack .content .part-tow .swiper-slide.swiper-slide-next {
-  display: flex;
+.verifie-confirmation-pack .content .part-tow .swiper-slide.swiper-slide-prev .side-one, .verifie-confirmation-pack .content .part-tow .swiper-slide.swiper-slide-prev .side-tow, .verifie-confirmation-pack .content .part-tow .swiper-slide.swiper-slide-next .side-one, .verifie-confirmation-pack .content .part-tow .swiper-slide.swiper-slide-next .side-tow {
+  display: unset;
 }
 .verifie-confirmation-pack .content .part-tow .swiper-slide.swiper-slide-prev .space-pic, .verifie-confirmation-pack .content .part-tow .swiper-slide.swiper-slide-next .space-pic {
   height: 180px;
@@ -132,14 +143,36 @@ a:hover {
   justify-content: center;
   align-items: center;
 }
+.verifie-confirmation-pack .content .part-tow .swiper-slide.swiper-slide-prev .space-pic img, .verifie-confirmation-pack .content .part-tow .swiper-slide.swiper-slide-next .space-pic img {
+  display: block;
+}
 .verifie-confirmation-pack .content .part-tow .swiper-slide.swiper-slide-active {
   display: flex;
 }
+.verifie-confirmation-pack .content .part-tow .swiper-slide.swiper-slide-active .side-one, .verifie-confirmation-pack .content .part-tow .swiper-slide.swiper-slide-active .side-tow, .verifie-confirmation-pack .content .part-tow .swiper-slide.swiper-slide-active .space-pic {
+  display: unset;
+}
+.verifie-confirmation-pack .content .part-tow .swiper-slide.swiper-slide-active .space-pic {
+  height: 200px;
+  width: 70%;
+}
 .verifie-confirmation-pack .content .part-tow .swiper-slide.swiper-slide-active .space-pic img {
+  display: block;
   border-style: solid;
   border-color: #ee889a;
   border-width: 2px;
   padding: 5px;
+  width: 100%;
+  height: 100%;
+}
+.verifie-confirmation-pack .content .part-tow .swiper-slide .drag-old {
+  display: flex;
+  flex-direction: column;
+}
+.verifie-confirmation-pack .content .part-tow .swiper-slide .drag-old .space-element {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .verifie-confirmation-pack .content .part-tow .swiper-slide .drag-old .old-document-drag {
   width: 22px;
@@ -254,6 +287,9 @@ a:hover {
     height: 180px;
     width: 50%;
   }
+  .verifie-confirmation-pack .content .part-tow .swiper-slide.swiper-slide-active .space-pic {
+    height: 170px;
+  }
   .verifie-confirmation-pack .button-actions {
     justify-content: center !important;
   }
@@ -282,6 +318,9 @@ a:hover {
   .verifie-confirmation-pack .content .part-tow .swiper-slide.swiper-slide-prev .space-pic, .verifie-confirmation-pack .content .part-tow .swiper-slide.swiper-slide-next .space-pic {
     height: 180px;
     width: 50%;
+  }
+  .verifie-confirmation-pack .content .part-tow .swiper-slide .side-one, .verifie-confirmation-pack .content .part-tow .swiper-slide .side-tow {
+    width: 15%;
   }
 }
 

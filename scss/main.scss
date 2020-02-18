@@ -65,6 +65,9 @@ a:hover {
       background-color: #fff;
       border-radius: 4px;
       margin-bottom: 50px;
+      .header-nav:first-child {
+        border-right: 2px #dfdfdf dotted;
+      }
       .header-nav {
         padding-top: 20px;
         p {
@@ -97,11 +100,21 @@ a:hover {
     .part-tow {
       padding-top: 20px;
       padding-bottom: 40px;
+      .section-drag-one {
+        border-right: 2px #dfdfdf dotted;
+      }
       .swiper-slide {
         display: flex;
         justify-content: center;
         align-items: center;
-        display: none;
+         .side-one, .side-tow {
+           display: none;
+         }
+         .space-pic {
+           img {
+             display: none;
+           }
+         }
         .side-one, .side-tow {
           width: 10%;
           text-align: center;
@@ -115,27 +128,47 @@ a:hover {
           }
         }
         &.swiper-slide-prev, &.swiper-slide-next {
-          display: flex;
+          .side-one, .side-tow {
+            display: unset;
+          }
           .space-pic {
             height: 180px;
             width: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
+            img {
+              display: block
+            }
           }
         }
         &.swiper-slide-active {
+          .side-one, .side-tow, .space-pic {
+            display: unset;
+          }
           display: flex;
           .space-pic {
+            height: 200px;
+            width: 70%;
             img {
+              display: block;
               border-style: solid;
               border-color: #ee889a;
               border-width: 2px;
               padding:5px;
+              width: 100%;
+              height: 100%;
             }
           }
         }
         .drag-old {
+          display: flex;
+          flex-direction: column;
+          .space-element {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
           .old-document-drag {
             width: 22px;
             height: 22px;
@@ -264,6 +297,11 @@ a:hover {
               width: 50%;
             }
           }
+          &.swiper-slide-active{
+            .space-pic {
+              height: 170px;
+            }
+          }
         }
       }
     }
@@ -300,6 +338,9 @@ a:hover {
               height: 180px;
               width: 50%;
             }
+          }
+          .side-one, .side-tow {
+            width: 15%;
           }
         }
       }
