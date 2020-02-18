@@ -220,6 +220,7 @@ a:hover {
   border: none;
   color: #fff;
   margin-right: 0;
+  width: 120px;
 }
 .verifie-confirmation-pack .button-actions .save:hover {
   background-color: #e65973;
@@ -265,6 +266,12 @@ a:hover {
     padding-left: 10px;
     padding-right: 10px;
   }
+  .verifie-confirmation-pack .alert-danger {
+    padding-top: 0.75rem;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+  }
   .verifie-confirmation-pack .content {
     width: 98%;
   }
@@ -299,6 +306,9 @@ a:hover {
     height: 450px;
   }
 
+  .verifie-confirmation-pack .jumbotron h2 {
+    font-size: 22px;
+  }
   .verifie-confirmation-pack .element-drag {
     padding-left: 10px;
     padding-right: 10px;

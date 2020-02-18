@@ -218,6 +218,7 @@ a:hover {
       border: none;
       color: #fff;
       margin-right: 0;
+      width: 120px;
       &:hover {
         background-color: #e65973
       }
@@ -268,6 +269,12 @@ a:hover {
       padding-left: 10px;
       padding-right: 10px;
     }
+    .alert-danger {
+      padding-top: .75rem;
+      padding-left: 0;
+      padding-right: 0;
+      text-align: center;
+    }
     .content {
       width: 98%;
       .part-one {
@@ -316,6 +323,11 @@ a:hover {
     height: 450px;
   }
   .verifie-confirmation-pack  {
+    .jumbotron {
+      h2 {
+        font-size: 22px;
+      }
+    }
     .element-drag {
       padding-left: 10px;
       padding-right: 10px;
