@@ -77,6 +77,9 @@ a:hover {
             padding-right: 0px !important;
             padding-left: 0 !important;
           }
+          &:nth-of-type(2) {
+            text-align: right;
+          }
         }
       }
     }
@@ -94,6 +97,14 @@ a:hover {
         li {
           margin-top: 25px;
           margin-bottom: 25px;
+          list-style-type: none;
+          counter-increment: li;
+          &::before {
+            content: counter(li)'.';
+            color: #df2547;
+            font-weight: 800;
+            padding-right: 5px;
+          }
         }
       }
     }
@@ -107,12 +118,13 @@ a:hover {
         display: flex;
         justify-content: center;
         align-items: center;
-         .side-one, .side-tow {
+         .side-one, .side-tow,.zoom {
            display: none;
          }
          .space-pic {
            img {
              display: none;
+             height: 0
            }
          }
         .side-one, .side-tow {
@@ -132,7 +144,7 @@ a:hover {
             display: unset;
           }
           .space-pic {
-            height: 180px;
+            height: 100px;
             width: 50%;
             display: flex;
             justify-content: center;
@@ -143,13 +155,13 @@ a:hover {
           }
         }
         &.swiper-slide-active {
-          .side-one, .side-tow, .space-pic {
+          .side-one, .side-tow, .space-pic, .zoom {
             display: unset;
           }
           display: flex;
           .space-pic {
-            height: 200px;
-            width: 70%;
+            height: 150px;
+            width: 65%;
             img {
               display: block;
               border-style: solid;
@@ -174,7 +186,7 @@ a:hover {
             height: 22px;
             background: #e40337;
             border-radius: 50%;
-            padding: 3px 5px;
+            padding: 2px 5px;
             text-align: center;
             color: #fff;
             margin-bottom: 6px;
@@ -227,7 +239,7 @@ a:hover {
 }
 
 .swiper-container, .swiper-container-2 {
-  height: 700px;
+  height: 550px;
   overflow: unset;
   z-index: 4;
 }
@@ -306,7 +318,7 @@ a:hover {
           }
           &.swiper-slide-active{
             .space-pic {
-              height: 170px;
+              height: 100px;
             }
           }
         }
