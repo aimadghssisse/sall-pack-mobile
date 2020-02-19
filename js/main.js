@@ -1,3 +1,7 @@
+// load imag not on  dragOver
+$('img').each(function () {
+  $(this).addClass('not-drag')
+})
 //initialize swiper when document ready
 var mySwiper = new Swiper ('.swiper-container', {
   // Optional parameters
@@ -41,7 +45,6 @@ var drag = null
 interact('.drag-document').draggable({
   listeners: {
     start (event) {
-      console.log(event);
     },
     move (event) {
       position.x += event.dx
@@ -118,6 +121,7 @@ interact('.dropzone-drag').dropzone({
       dragOver.parents('.swiper-slide ').find('.side-one .drag-old').append("<span class='space-element'><span class='old-document-drag'>"+old+"</span></span>")
     }
     activetedSaveData()
+    checkImgAncien()
   }
 });
 
@@ -138,6 +142,11 @@ function activetedSaveData() {
     item.old.map(nbr => {
       index = existObject.indexOf(String(nbr))
       if(index != -1) {
+        $('img').each(function () {
+          if($(this).data('number') == nbr) {
+            $(this).removeClass('not-drag').addClass('done-drag')
+          }
+        })
         existObject.splice(index, 1)
       }
     })
@@ -186,14 +195,15 @@ $('body').on('click', '.swiper-slide-active .trash-drag', function () {
                 if ( item.old[i] == old) {
                   $(this).find('.drag-old span').each(function () {
                     if(old == $(this).text()) {
+                      $('img').each(function () {
+                        if($(this).data('number') == old) {
+                          $(this).removeClass('done-drag').addClass('not-drag')
+                        }
+                      })
                       var parent = $(this).parent('.drag-old')
                       parent.find('.trash-drag').fadeOut('slow').remove()
                       $(this).fadeOut('slow').remove()
-                      var count = 0+ 'px'
-                      if(parent.find('.old-document-drag').length != 0) {
-                        var count = (parent.find('.old-document-drag').length * 15 + 24 ) + 'px'
-                      }
-                      parent.css('top', 'calc(50% - '+count+')')
+                      checkImgAncien ()
                     }
                   })
                   objectDragDrop[key].old.splice(i, 1);
@@ -210,6 +220,17 @@ $('body').on('click', '.swiper-slide-active .trash-drag', function () {
   old = ''
 })
 
+// document nouveau
+
+function checkImgAncien () {
+  $('.swiper-container-2 .swiper-slide').each(function () {
+      if($(this).find('.side-one .drag-old .space-element').length > 0) {
+        $(this).find('img').removeClass('not-drag').addClass('done-drag')
+      } else {
+        $(this).find('img').removeClass('done-drag').addClass('not-drag')
+      }
+  })
+}
 // save data collection
 $('.save').click(function () {
   console.log(objectDragDrop);

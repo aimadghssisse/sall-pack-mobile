@@ -137,6 +137,18 @@ a:hover {
           img {
             width: 100%;
             height: auto;
+            &.done-drag {
+              border-style: solid;
+              border-color: green;
+              border-width: 2px;
+              padding:5px;
+            }
+            &.not-drag {
+              border-style: solid;
+              border-color: #ee889a;
+              border-width: 2px;
+              padding:5px;
+            }
           }
         }
         &.swiper-slide-prev, &.swiper-slide-next {
@@ -164,10 +176,6 @@ a:hover {
             width: 65%;
             img {
               display: block;
-              border-style: solid;
-              border-color: #ee889a;
-              border-width: 2px;
-              padding:5px;
               width: 100%;
               height: 100%;
             }
@@ -247,9 +255,9 @@ a:hover {
 }
 .swiper-container-2 {
   .swiper-slide {
-    &.swiper-slide-active {
-      .space-pic {
-        img {
+    .space-pic {
+      img {
+        &.done-drag, &.not-drag {
           border-style: dotted !important;
         }
       }
