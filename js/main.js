@@ -13,7 +13,8 @@ var mySwiper = new Swiper ('.swiper-container', {
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
-  }
+  },
+  noSwipingSelector: ".space-pic"
 })
 
 var mySwiper = new Swiper ('.swiper-container-2', {
@@ -40,6 +41,7 @@ var drag = null
 interact('.drag-document').draggable({
   listeners: {
     start (event) {
+      console.log(event);
     },
     move (event) {
       position.x += event.dx
@@ -65,7 +67,7 @@ interact('.drag-document').draggable({
   }
 })
 
-interact('.dropzone').dropzone({
+interact('.dropzone-drag').dropzone({
   accept: '.drag-document',
   ondrop: function (event) {
     var dragOver = $(event.target)
@@ -140,7 +142,6 @@ function activetedSaveData() {
       }
     })
   })
-  console.log(existObject.length);
   if(existObject.length > 0) {
     $('button.save').attr('disabled', true)
   } else {
@@ -211,8 +212,8 @@ $('body').on('click', '.swiper-slide-active .trash-drag', function () {
 
 // save data collection
 $('.save').click(function () {
-  console.table(objectDragDrop);
-  console.table(objectDragDropID);
+  console.log(objectDragDrop);
+  console.log(objectDragDropID);
 })
 
 // reset data collection
@@ -227,8 +228,8 @@ $('.cancel').click(function () {
     })
   })
   activetedSaveData()
-  console.table(objectDragDropID);
-  console.table(objectDragDrop);
+  console.log(objectDragDropID);
+  console.log(objectDragDrop);
 })
 // fancybox applique on image and zoom icon
 $('.zoom').on('click', function() {

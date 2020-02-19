@@ -214,6 +214,8 @@ a:hover {
   .button-actions {
     padding-top: 20px;
     width: 100%;
+    position: relative;
+    z-index: 4;
     button {
       margin-left: 12px;
       margin-right: 12px;
@@ -257,19 +259,31 @@ a:hover {
 .swiper-wrapper {
   z-index: 2
 }
+.swiper-button-next::after {
+    content: "\f078";
+}
+.swiper-button-prev::after {
+    content: "\f077";
+}
+
 .swiper-button-next, .swiper-button-prev {
+  background: none;
   transform: translateX(-50%);
   left: 50%;
   &::after {
+    font-family: "FontAwesome";
+    text-transform: none!important;
+    letter-spacing: 0;
+    text-transform: none;
+    font-variant: initial;
     font-size: 30px;
-    transform: rotate(-90deg);
   }
 }
 .swiper-button-next {
-  top: 1%;
+  top: 99%;
 }
 .swiper-button-prev {
-  top: 99%;
+  top: 1%;
 }
 
 @media screen and (max-width: 768px)  {
@@ -370,4 +384,9 @@ a:hover {
       }
     }
   }
+}
+
+.drag-document, .drag-document * {
+  -ms-touch-action: none;
+ touch-action: none;
 }

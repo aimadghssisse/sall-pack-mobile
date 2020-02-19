@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   background-color: #f3f3f3;
 }
@@ -215,6 +216,8 @@ a:hover {
 .verifie-confirmation-pack .button-actions {
   padding-top: 20px;
   width: 100%;
+  position: relative;
+  z-index: 4;
 }
 .verifie-confirmation-pack .button-actions button {
   margin-left: 12px;
@@ -252,21 +255,34 @@ a:hover {
   z-index: 2;
 }
 
+.swiper-button-next::after {
+  content: "";
+}
+
+.swiper-button-prev::after {
+  content: "";
+}
+
 .swiper-button-next, .swiper-button-prev {
+  background: none;
   transform: translateX(-50%);
   left: 50%;
 }
 .swiper-button-next::after, .swiper-button-prev::after {
+  font-family: "FontAwesome";
+  text-transform: none !important;
+  letter-spacing: 0;
+  text-transform: none;
+  font-variant: initial;
   font-size: 30px;
-  transform: rotate(-90deg);
 }
 
 .swiper-button-next {
-  top: 1%;
+  top: 99%;
 }
 
 .swiper-button-prev {
-  top: 99%;
+  top: 1%;
 }
 
 @media screen and (max-width: 768px) {
@@ -344,6 +360,10 @@ a:hover {
   .verifie-confirmation-pack .content .part-tow .swiper-slide .side-one, .verifie-confirmation-pack .content .part-tow .swiper-slide .side-tow {
     width: 15%;
   }
+}
+.drag-document, .drag-document * {
+  -ms-touch-action: none;
+  touch-action: none;
 }
 
 /*# sourceMappingURL=main.css.map */
